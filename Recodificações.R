@@ -3117,13 +3117,6 @@ Ven2016$Conf_int <- recode(Ven2016$it1, 0 <- 4, 1 <- 3, 2 <-2, 3 <- 1)
 save(Ven2016, file = "Ven2016.RData")
 
 
-#juntar todos os bancos # linha de comando:
-#ESEB <- merge(ESEB, banco 2, by="nome da variável")
-#Esse não deu certo =(
-
-Arg2019 <- merge(Arg2019, Bol2019, by= "pais")
-Arg2019 <- merge(Arg2019, Bra2019, by= "pais")
-Arg2019 <- merge(Arg2019, Col2018, by= "pais")
 
 
 ##Banco <- merge(Banco 1, Banco2, all = T)
