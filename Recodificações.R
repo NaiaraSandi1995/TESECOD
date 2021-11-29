@@ -3117,8 +3117,6 @@ Ven2016$Conf_int <- recode(Ven2016$it1, 0 <- 4, 1 <- 3, 2 <-2, 3 <- 1)
 save(Ven2016, file = "Ven2016.RData")
 
 
-
-
 ##Banco <- merge(Banco 1, Banco2, all = T)
 Banco <- merge(Arg2019, Bol2019, all = T)
 Banco1 <- merge(Banco, Bra2019, all = T)
@@ -3159,3 +3157,37 @@ save(BancoLAPOPCompleto, file = "BancoLAPOPCompleto.RData")
 # 1 os países que possuem só o casamento legalizado e 2 países que possuem casamento 
 # e adoção legalizados.
 
+
+
+=====================================================
+#Outra possibilidade de merge
+
+#merge de novo
+
+Banco1 <- merge(Arg2019, Bra2019, all= T)
+Banco2 <- merge(Bol2019, Chi2018, all= T)
+Banco3 <- merge(Cos2018, Els2018, all=T)
+Banco4 <- merge(Gua2018, Hai2016, all=T)
+Banco5 <- merge(Hon2018, Mex2018, all= T)
+Banco6 <- merge(Nic2018, Pan2018, all = T)
+Banco7 <- merge(Par2018, Equ2018, all= T)
+Banco8 <- merge(Per2018, Rep2018, all= T)
+Banco9 <- merge(Uru2018, Ven2016, all= T)
+
+
+Banco10 <- merge(Banco1, Banco2, all = T)
+Banco11 <- merge(Banco3, Banco4, all= T)
+Banco12 <- merge(Banco5, Banco6, all=T)
+Banco13 <- merge(Banco7, Banco8, all = T)
+
+Banco14 <- merge(Banco10, Banco9, all = T)
+Banco15 <- merge(Banco11, Banco12, all=T)
+Banco16 <- merge(Banco13, Banco14, all=T)
+
+BancoFinal <- merge(Banco15, Banco16, all=T)
+BancoFinal <- merge(BancoFinal, DadosMacro, all = T )
+table(BancoFinal$pais)
+
+table(BancoFinal$pais)
+
+save(BancoFinal, file= "BancoFinal.RData")
