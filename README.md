@@ -3,7 +3,7 @@ Nese repositório você encontrará todos os arquivos que permitirão reprodizir
 Os arquivos disponibilizados são os seguintes:
 
 1ª parte das análises empírica das tese
-![image](https://user-images.githubusercontent.com/63126159/180507065-02e4d1df-51fa-435c-9308-5f9be8f32ff0.png)
+![image](https://user-images.githubusercontent.com/63126159/180509375-0016eb79-97aa-45f4-84e7-b0703c3be7b8.png)
 
 Bancos Geral - com todas as variáveis da 1ª parte da tese
 Banco Geral 2- com todas as variáis + as variáveis de cultura política de nível 2 
