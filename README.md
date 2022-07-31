@@ -1,5 +1,5 @@
 ## Tese ####
-Nese repositório você encontrará todos os arquivos que permitirão reprodizir integralmente toda a parte quantitativa da tese. 
+Nesse repositório você encontrará todos os arquivos que permitirão reprodizir integralmente toda a parte quantitativa da tese. 
 Os arquivos disponibilizados são os seguintes:
 
 A)1ª parte das análises empírica das tese
