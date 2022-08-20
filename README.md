@@ -17,5 +17,4 @@ Questionário contendo as variáveis de nível 1
 D)2ª parta das análises empíricas da tese - contendo o merge + a análise multinível
 Todos os modelos finais da tese, inclusive aqueles que foram criados, mas não constam na tese.
 
-![image](https://user-images.githubusercontent.com/63126159/180512917-7719259b-e155-40c1-990d-4ad73ae9eb92.png)
 
