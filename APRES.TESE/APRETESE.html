@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>APRETESE.knit</title>
+
+<script src="APRETESE_files/header-attrs-2.16/header-attrs.js"></script>
+<script src="APRETESE_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="APRETESE_files/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="APRETESE_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="APRETESE_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="APRETESE_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="APRETESE_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="APRETESE_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="APRETESE_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="APRETESE_files/navigation-1.1/tabsets.js"></script>
+<script src="APRETESE_files/kePrint-0.0.1/kePrint.js"></script>
+<link href="APRETESE_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore"><center>
+<font size = 7> Apresentação Tese UFPR
+</center></h1>
+<h3 class="subtitle"><center>
+<font size = 6> Reação conservadora ou mudança de valores? <br> <font size = 5>Tolerância política a homossexuais e a religiosidade na América Latina
+</center></h3>
+<h4 class="author"><br>
+<center>
+Naiara Sandi de A. Alcantara</h4>
+<address class="author_afil">
+<center>
+<font size = 2>Discente-PPGCP-UFPR<br><h4 class="author"><br>
+<center>
+Dr.Ednaldo Ap. Ribeiro</h4>
+<address class="author_afil">
+<center>
+<font size = 2>Orientador<br><h4 class="author"><br>
+<center>
+<font size = 4> Curitiba</h4>
+<h4 class="date"><center>
+07, novembro 2022</h4>
+
+</div>
+
+
+<hr />
+<div class="alert alert-warning">
+<small>
+<center>
+<font size = 2> Tese apresentada à banca de<br />
+defesa do curso de Pós Graduação<br />
+em Ciência Política, Setor de Ciências<br />
+Humanas, Universidade Federal do<br />
+Paraná, como requisito parcial à<br />
+obtenção do título de Doutora em<br />
+Ciência Política </small>
+</div>
+<hr />
+<p><img src="data:image/jpeg;base64,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" alt="ufpr" style="height: 70px; position: absolute; width: 15%; top:0; right:0"/></p>
+<p>div.header-panel { background-color: blue; }</p>
+<style>
+<p>h1.title { color: #708090; background-color: #f5f5f5; font-family: calibri; font-size: 20px; }</p>
+<p>h2.title { color: #708090; background-color: #f5f5f5; font-family: calibri; font-size: 20px; }</p>
+<style>
+body {
+  color: #708090;
+  font-family: calibri;
+  backgroud-color: #f5f5f5
+  font-size: 55px
+} 
+</style>
+<div id="introdução-e-objetivo" class="section level1 tabset tabset-fade" number="1">
+<h1 class="tabset tabset-fade"><span class="header-section-number">1</span> Introdução e objetivo</h1>
+<p><font size = 4> Investigar em que medida o crescente reconhecimento de direitos civis de homossexuais por governos nacionais tem afetado as atitudes de grupos mais fortemente religiosos.</font></p>
+<div id="objetivo-secundários" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> <font size = 5> Objetivo secundários:</h2>
+<p><font size = 4.5> 1. Conectar a discussão recente sobre reação conservadora a uma já bastante consolidada linha de investigações sobre os condicionantes da tolerância política, na qual a religião aparece como um fator fundamental</p>
+<p><font size = 4.5> 2. Identificar a relação de causalidade entre as mudanças nas legislações em relação aos homossexuais, e a opinião pública.</p>
+</div>
+<div id="questão-de-pesquisa" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> <font size = 5> Questão de pesquisa:</h2>
+<p><font size = 4.5></p>
+<ul>
+<li>A regulamentação de direitos civis aos homossexuais tem gerado contraofensiva religiosa por meio do acirramento de atitudes de intolerância política em relação a essa minoria na América Latina?</li>
+</ul>
+</div>
+</div>
+<div id="hipótese" class="section level1 tabset tabset-fade" number="2">
+<h1 class="tabset tabset-fade"><span class="header-section-number">2</span> Hipótese</h1>
+<p><font size = 4.5> <strong>H1:</strong> mudanças conjunturais, como o aumento de direitos aos homossexuais, têm gerado uma contraofensiva por parte dos grupos religiosos na forma de atitudes mais intolerantes a essa minoria sexual;</p>
+<p><font size = 4.5> <strong>H2:</strong> tanto mudanças legais quanto a atenuação do efeito da religião são resultados de um longo e consistente processo de alteração dos valores, principalmente no que diz respeito às liberdades individuais;</p>
+<p><font size = 4.5></p>
+<ul>
+<li>Metodologia: Quantitativa<br />
+</li>
+<li>Método: Regressão multinível</li>
+</ul>
+</div>
+<div id="material-empírico" class="section level1 tabset tabset-fade" number="3">
+<h1 class="tabset tabset-fade"><span class="header-section-number">3</span> Material empírico</h1>
+<p><font size = 4.5></p>
+<ul>
+<li>Nível individual (1): LAPOP (2019);<br />
+</li>
+<li>Nível contextual (2) advém da composição de variáveis (extraídas de bases como World Atlas, ILGA World).</li>
+</ul>
+<p><strong>UNIVERSO</strong> <font size = 4.5></p>
+<ul>
+<li>18 países da América Latina e suas populações respectivamente;</li>
+</ul>
+<p><strong>AMOSTRA:</strong> <font size = 4.5></p>
+<ul>
+<li>28.645 (composto pelo nível 1: indivíduos e nível 2: 18 países)</li>
+</ul>
+</div>
+<div id="variáveis" class="section level1 tabset tabset-fade" number="4">
+<h1 class="tabset tabset-fade"><span class="header-section-number">4</span> Variáveis</h1>
+<p><font size = 4.5></p>
+<ul>
+<li>VD: Tolerância aos homossexuais</li>
+</ul>
+<p><font size = 4.5></p>
+<ul>
+<li><p>VI:</p>
+<ul>
+<li>Religiosidade (denominação, intensidade e ativismo);</li>
+<li>Legislação dos países (TNaH); desemprego; uma medida de tolerância por país (2008/2009) e o Índice de Valores Emancipatórios (IVE);<br />
+</li>
+<li>Variáveis de controle;</li>
+</ul></li>
+</ul>
+<div id="lapop" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> LAPOP:</h2>
+<center>
+Tabela 1- Tamanho da amostra do LAPOP por país - 2018/2019
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
+<table class="table lightable-classic" style="font-size: 17px;  font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Quantidade
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+País e código
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Tamanho da amostra
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+<ol start="17" style="list-style-type: decimal">
+<li>Argentina
+</td>
+<td style="text-align:right;">
+1528
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal">
+<li>Bolívia
+</td>
+<td style="text-align:right;">
+1682
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+<ol start="15" style="list-style-type: decimal">
+<li>Brasil
+</td>
+<td style="text-align:right;">
+1498
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:left;">
+<ol start="13" style="list-style-type: decimal">
+<li>Chile
+</td>
+<td style="text-align:right;">
+1638
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal">
+<li>Costa Rida
+</td>
+<td style="text-align:right;">
+1501
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal">
+<li>Ecuador
+</td>
+<td style="text-align:right;">
+1533
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li>El Salvador
+</td>
+<td style="text-align:right;">
+1511
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>Guatemala
+</td>
+<td style="text-align:right;">
+1596
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:left;">
+<ol start="22" style="list-style-type: decimal">
+<li>Haiti
+</td>
+<td style="text-align:right;">
+2221
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal">
+<li>Honduras
+</td>
+<td style="text-align:right;">
+1560
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>México
+</td>
+<td style="text-align:right;">
+1568
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal">
+<li>Nicarágua
+</td>
+<td style="text-align:right;">
+1547
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal">
+<li>Panamá
+</td>
+<td style="text-align:right;">
+1559
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:left;">
+<ol start="12" style="list-style-type: decimal">
+<li>Paraguai
+</td>
+<td style="text-align:right;">
+1515
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal">
+<li>Peru
+</td>
+<td style="text-align:right;">
+1521
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:left;">
+<ol start="21" style="list-style-type: decimal">
+<li>República Dominicana
+</td>
+<td style="text-align:right;">
+1516
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:left;">
+<ol start="14" style="list-style-type: decimal">
+<li>Uruguai
+</td>
+<td style="text-align:right;">
+1581
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:left;">
+<ol start="16" style="list-style-type: decimal">
+<li>Venezuela
+</td>
+<td style="text-align:right;">
+1558
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOTAL
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+28633
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<sub>Fonte: Autora, 2022</sub></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+<div id="tnah-e-desemprego" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> TNAH e Desemprego:</h2>
+<center>
+Tabela 2- Medidas de Análise do desemprego e da TNaH por país
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
+<table class="table lightable-classic" style="font-size: 17px;  font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Países
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Desemprego (%)
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+TNaH
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<ol start="17" style="list-style-type: decimal">
+<li>Argentina
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="10" style="list-style-type: decimal">
+<li>Bolívia
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="15" style="list-style-type: decimal">
+<li>Brasil
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="13" style="list-style-type: decimal">
+<li>Chile
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="6" style="list-style-type: decimal">
+<li>Costa Rica
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li>El Salvador
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="9" style="list-style-type: decimal">
+<li>Equador
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li>Guatemala
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="22" style="list-style-type: decimal">
+<li>Haiti
+</td>
+<td style="text-align:right;">
+41
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal">
+<li>Honduras
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li>México
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal">
+<li>Nicarágua
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="7" style="list-style-type: decimal">
+<li>Panamá
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="12" style="list-style-type: decimal">
+<li>Paraguai
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="11" style="list-style-type: decimal">
+<li>Peru
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="21" style="list-style-type: decimal">
+<li>República Dominicana
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="14" style="list-style-type: decimal">
+<li>Uruguai
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="16" style="list-style-type: decimal">
+<li>Venezuela
+</td>
+<td style="text-align:right;">
+27
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<sub>Fonte: Autora, 2022</sub></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+<p><font size="2">Tentantiva de aumentar a escala TNaH</font> <a href="https://github.com/NaiaraSandi1995/Tese/blob/main/TentativadeaumentodaescalaTNaH.xlsx">Clique aqui</a></p>
+<p><font size="2">Modelos com PIBperCapita</font> <a href="https://github.com/NaiaraSandi1995/Tese/blob/main/ModelosComPIBpercapita.xlsx">Clique aqui</a></p>
+</div>
+<div id="med.-de-tolerância" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Med. de Tolerância:</h2>
+<center>
+Tabela 3- Média geral da variável dependente Tolerância política por país (TolerHomo), renomeada como MedToler, nos 18 países da América Latina entre 2008 e 2009
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
+<table class="table lightable-classic" style="font-size: 17px;  font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Países
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Medida de Tolerância
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Haiti
+</td>
+<td style="text-align:right;">
+2.27
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+El Salvador
+</td>
+<td style="text-align:right;">
+3.51
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guatemala
+</td>
+<td style="text-align:right;">
+3.53
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Honduras
+</td>
+<td style="text-align:right;">
+4.15
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+República Dominicana
+</td>
+<td style="text-align:right;">
+3.27
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Paraguai
+</td>
+<td style="text-align:right;">
+3.57
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Panamá
+</td>
+<td style="text-align:right;">
+4.74
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nicarágua
+</td>
+<td style="text-align:right;">
+4.45
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Peru
+</td>
+<td style="text-align:right;">
+4.25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bolívia
+</td>
+<td style="text-align:right;">
+4.25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Equador
+</td>
+<td style="text-align:right;">
+4.32
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Venezuela
+</td>
+<td style="text-align:right;">
+4.44
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Costa Rica
+</td>
+<td style="text-align:right;">
+5.09
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+México
+</td>
+<td style="text-align:right;">
+5.17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:right;">
+5.49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Brasil
+</td>
+<td style="text-align:right;">
+5.77
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Argentina
+</td>
+<td style="text-align:right;">
+7.29
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Uruguai
+</td>
+<td style="text-align:right;">
+6.94
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><sub>Fonte: Autora, 2022</sub></p>
+</div>
+<div id="ive" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> IVE:</h2>
+<center>
+Tabela 4- Índice de Valores Emancipatórios de 2012
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
+<table class="table lightable-classic" style="font-size: 17px;  font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Países
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+IVE2012
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Argentina
+</td>
+<td style="text-align:left;">
+6.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bolívia
+</td>
+<td style="text-align:left;">
+5.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Brasil
+</td>
+<td style="text-align:left;">
+6.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:left;">
+6.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Costa Rica
+</td>
+<td style="text-align:left;">
+5.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+El Salvador
+</td>
+<td style="text-align:left;">
+4.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Equador
+</td>
+<td style="text-align:left;">
+5.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guatemala
+</td>
+<td style="text-align:left;">
+5.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Haiti
+</td>
+<td style="text-align:left;">
+5.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Honduras
+</td>
+<td style="text-align:left;">
+4.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+México
+</td>
+<td style="text-align:left;">
+5.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nicarágua
+</td>
+<td style="text-align:left;">
+5.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Panamá
+</td>
+<td style="text-align:left;">
+5.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Paraguai
+</td>
+<td style="text-align:left;">
+5.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Peru
+</td>
+<td style="text-align:left;">
+5.3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+República Dominicana
+</td>
+<td style="text-align:left;">
+5.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Uruguai
+</td>
+<td style="text-align:left;">
+7.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Venezuela
+</td>
+<td style="text-align:left;">
+5.4
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><sub>Fonte: Autora, 2022</sub></p>
+<p><font size="2">Para acessar o script de criação do IVE:</font> <a href="https://github.com/NaiaraSandi1995/Tese/blob/main/SCRIPTS/CriacaoIVE2012.R">Clique aqui</a></p>
+</div>
+</div>
+<div id="fluxograma-das-variáveis" class="section level1 tabset tabset-fade" number="5">
+<h1 class="tabset tabset-fade"><span class="header-section-number">5</span> Fluxograma das variáveis</h1>
+<blockquote>
+<p>Fluxograma 1 - Organização de todas as variáveis utilizadas de acordo importância conferido a cada grupo[1]</p>
+</blockquote>
+<p><img src="info.png" width="70%" style="display: block; margin: auto;" /> <sub> Fonte: Autora, a partir dos dados do LAPOP (2004-2019) </sub></p>
+<p><sub> Justificativa para utilização das variáveis de controle: Democracia (Dem) vide capítulo 2 – Tolerância Política e Democracia. Confiança Interpessoal (Confint) vide cap. 2, subseção 2.2- Tolerância Política nas jovens democracias, conforme Csapo (2017). Sexo vide seção 2.2 - Tolerância Política nas jovens democracias, conforme Ribeiro e Borba (2020).</sub></p>
+</div>
+<div id="resultados" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Resultados</h1>
+<div id="análise-descritiva--tolerância-política" class="section level2 tabset tabset-fade" number="6.1">
+<h2 class="tabset tabset-fade"><span class="header-section-number">6.1</span> Análise Descritiva -Tolerância política:</h2>
+<p>Nas projeções gráficas é possível verificar os países subdivididos, a partir de suas médias de tolerância, sendo que a variável está organizada em uma escala de 10 pontos.</p>
+<p>Gráfico – Projeção gráfica da média simples de tolerância nos 18 países, entre 2004 e 2019</p>
+<div id="todos-os-países" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Todos os países:</h3>
+<p><img src="APRETESE_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="américa-latina" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> América Latina:</h3>
+<p><img src="APRETESE_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub></p>
+</div>
+<div id="primeiro-grupo" class="section level3" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Primeiro grupo:</h3>
+<p><img src="APRETESE_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub></p>
+</div>
+<div id="segundo-grupo" class="section level3" number="6.1.4">
+<h3><span class="header-section-number">6.1.4</span> Segundo Grupo:</h3>
+<p><img src="APRETESE_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub></p>
+</div>
+<div id="terceiro-grupo" class="section level3" number="6.1.5">
+<h3><span class="header-section-number">6.1.5</span> Terceiro Grupo:</h3>
+<p><img src="APRETESE_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub></p>
+</div>
+<div id="quarto-grupo" class="section level3" number="6.1.6">
+<h3><span class="header-section-number">6.1.6</span> Quarto Grupo:</h3>
+<p><img src="APRETESE_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub></p>
+</div>
+</div>
+<div id="análise-descritivas---denominações-religiosas" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Análise descritivas - Denominações religiosas:</h2>
+<p>Gráfico 4 - Distribuição das denominações religiosas nos países da América Latina, a partir do valor absoluto das filiações, 2018/2019</p>
+<p><img src="APRETESE_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub></p>
+<p>Com exceção de alguns países, os católicos ainda são maioria, mesmo entre o grupo mais tolerante. Todavia, em países como Uruguai, Brasil, Argentina e Chile, percebe-se um crescimento significativo de ateus no grupo tolerante. Em países como Guatemala, Honduras, El Salvador, Nicarágua e Haiti, existe grande quantidade de filiados a outras denominações no grupo de intolerantes. São poucos os países que possuem quantidades semelhantes ou maiores de tolerantes do que intolerantes, conforme já havíamos verificado no gráfico 1, os países com os maiores índices de tolerância, de acordo com a opinião pública, são: Uruguai, Argentina, Brasil, Costa Rica, Chile e México.</p>
+<hr />
+</div>
+</div>
+<div id="análises-inferenciais---1ª-parte" class="section level1 tabset tabset-fade" number="7">
+<h1 class="tabset tabset-fade"><span class="header-section-number">7</span> Análises inferenciais - 1ª Parte</h1>
+<div id="anova" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Anova:</h2>
+<p><img src="tabela5.png" width="80%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="modelo-1" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Modelo 1:</h2>
+<p>Tabela 6, p.81 <img src="tabela6.png" width="45%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="modelo-2" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Modelo 2:</h2>
+<p>Tabela 7, p.85 <img src="tabela7.png" width="55%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="modelo-3" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Modelo 3:</h2>
+<p>Tabela 9, p.87 <img src="tabela9.png" width="55%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="modelo-4" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Modelo 4:</h2>
+<p>Tabela 10, p.88 <img src="tabela10.png" width="55%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="valores-preditos" class="section level2" number="7.6">
+<h2><span class="header-section-number">7.6</span> valores preditos:</h2>
+<p>Quadro 2, p.89</p>
+<center>
+<p><font size="3">Valores preditos um indivíduo do sexo masculino, em diferentes contextos políticos e sociais em relação a homossexualidade</p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
+<table class=" lightable-paper table" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto; font-size: 17px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; position: sticky; top:0; background-color: #FFFFFF;" colspan="1">
+<div style="border-bottom: 1px solid #00000020; padding-bottom: 5px; ">
+Valores Preditos
+</div>
+</th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; position: sticky; top:0; background-color: #FFFFFF;" colspan="1">
+<div style="border-bottom: 1px solid #00000020; padding-bottom: 5px; ">
+Perfis
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+4,3
+</td>
+<td style="text-align:left;width: 40em; background-color: #CADEFD !important;">
+Homem de 40 anos, ateu, que confia na democracia e nos outros cidadãos e que está em um contexto em que os homossexuais não possuem direito a união e adoção.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+6,5
+</td>
+<td style="text-align:left;width: 40em; background-color: #CADEFD !important;">
+Esse mesmo homem, de 40 anos, ateu, que confia na democracia e nos outros cidadãos, mas está inserido em um contexto em que os homossexuais têm direitos.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+3,6
+</td>
+<td style="text-align:left;width: 40em; background-color: #CADEFD !important;">
+Homem de 40 anos, católico, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos, mas está em um país que não possui nenhum direito para os homossexuais.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+5,7
+</td>
+<td style="text-align:left;width: 40em; background-color: #CADEFD !important;">
+Esse mesmo homem de 40 anos, católico, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos e está em um país que permite que homossexuais se relacionem, se casem e adotem crianças.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+2,5
+</td>
+<td style="text-align:left;width: 40em; background-color: #CADEFD !important;">
+Homem de 40 anos, evangélico, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos, mas está em um país que não possui nenhum direito para os homossexuais.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+4,6
+</td>
+<td style="text-align:left;width: 40em; background-color: #CADEFD !important;">
+Esse mesmo homem de 40 anos, evangélico, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos, mas está em um país que permite que homossexuais se relacionem, se casem e adotem crianças.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+2,9
+</td>
+<td style="text-align:left;width: 40em; background-color: #CADEFD !important;">
+Homem de outra religião, também com 40 anos, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos, mas está em um país que não possui nenhum direito para os homossexuais.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;border-right:1px solid;">
+5,0
+</td>
+<td style="text-align:left;width: 40em; background-color: #CADEFD !important;">
+Esse mesmo homem de outra religião, também com 40 anos, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos, mas está em um país que permite que homossexuais se relacionem, se casem e adotem crianças.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub></p>
+<hr />
+</div>
+</div>
+<div id="análises-inferenciais---2ª-parte" class="section level1 tabset tabset-fade" number="8">
+<h1 class="tabset tabset-fade"><span class="header-section-number">8</span> Análises inferenciais - 2ª Parte</h1>
+<div id="modelo-5" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Modelo 5:</h2>
+<p>Tabela 11, p.94 <img src="tabela11.png" width="75%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="descritivas" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Descritivas:</h2>
+<p>Modelo 6 (tabela 12) e tabela descritiva 13, p.96 <img src="tabela12.png" width="98%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="modelo-7" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> modelo 7:</h2>
+<p>Tabela 14, p.97 <img src="tabela14.png" width="70%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="modelo-8" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> modelo 8:</h2>
+<p>Tabela 14, p.97 <img src="tabela15.png" width="75%" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="considerações-finais" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Considerações finais</h1>
+<p><font size = 4.5></p>
+<ul>
+<li>Hipótese 1 foi refutada</li>
+<li>Hipótese 2 foi confirmada</li>
+</ul>
+<center>
+<p><kbd> <font size="4.5"> A cultura política se altera e na sequência tem-se a mudança na legislação e, não o contrário. </kbd></p>
+<hr />
+<p><font size="4">Para acessar o script e a base de dados da tese:</font> <a href="https://github.com/NaiaraSandi1995">Clique aqui</a></p>
+<hr />
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
