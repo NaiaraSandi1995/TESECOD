@@ -1,0 +1,675 @@
+---
+title: <center> <font size = 7> Apresentação Tese UFPR </center>
+
+subtitle: <center> <font size = 6> Reação conservadora ou mudança de valores?  <br> <font size = 5>Tolerância política a homossexuais e a religiosidade na América Latina </center>  
+
+author:
+   - name: <br><center> Naiara Sandi de A. Alcantara
+     affiliation: <center> <font size = 2>Discente-PPGCP-UFPR
+   - name: <br><center>Dr.Ednaldo Ap. Ribeiro
+     affiliation: <center> <font size = 2>Orientador
+   - name: <br> <center> <font size = 4> Curitiba 
+date: <center> `r format(Sys.time(), '%d, %B %Y')`
+output:
+  html_document: 
+    toc: yes
+    theme: united
+    self_contained: no
+    number_sections: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: yes
+    fig_caption: yes
+    highlight: monochrome
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+  word_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+---
+
+<div class="alert alert-warning"><small>
+<center>
+<font size = 2>
+Tese apresentada à banca de  
+defesa do curso de Pós Graduação  
+em Ciência Política, Setor de Ciências  
+Humanas, Universidade Federal do  
+Paraná, como requisito parcial à   
+obtenção do título de Doutora em  
+Ciência Política 
+</small></div>
+---
+
+
+```{r, echo=FALSE}
+htmltools::img(src = knitr::image_uri( "ufpr.jpg"), 
+               alt = 'ufpr',
+               style = 'height: 70px; position: absolute; width: 15%; top:0; right:0')
+
+```
+
+
+
+```{r setup, include = FALSE, out.width = '50%', warning= FALSE, echo=FALSE} 
+knitr::opts_chunk$set(fig.align = 'center', echo = FALSE)
+
+```
+
+
+
+<style> 
+
+h1.title { 
+  color: #708090;
+  background-color: #f5f5f5;
+  font-family: calibri; 
+  font-size: 20px;
+}
+
+h2.title { 
+  color: #708090;
+  background-color: #f5f5f5;
+  font-family: calibri; 
+  font-size: 20px;
+}
+
+<style>
+body {
+  color: #708090;
+  font-family: calibri;
+  backgroud-color: #f5f5f5
+  font-size: 55px
+} 
+</style>
+
+
+
+```{r echo = FALSE, warning = FALSE, include = FALSE}
+library(dplyr)
+library(plotly)
+library(knitr)
+library(rmarkdown)
+library(sjPlot)
+library(multilevel)#ativa o pacote para execução do modelo ANOVA
+library(lme4)
+options(scipen = 999)
+library(ggplot2)
+library(tidyr)
+library(tidyverse)
+
+```
+
+```{r include = FALSE}
+library(haven)
+library(memisc)
+library(desc)
+library(descr)
+library(RColorBrewer) 
+library(gridExtra)
+library(kableExtra)
+
+```
+
+
+# Introdução e objetivo {.tabset .tabset-fade}
+
+
+<font size = 4> Investigar em que medida o crescente reconhecimento de direitos civis de homossexuais por governos nacionais tem afetado as atitudes de grupos mais fortemente religiosos.</font>
+
+
+
+## <font size = 5> Objetivo secundários: 
+<font size = 4.5> 1. Conectar a discussão recente sobre reação conservadora a uma já bastante consolidada linha de investigações sobre os condicionantes da tolerância política, na qual a religião aparece como um fator fundamental 
+
+<font size = 4.5> 2. Identificar a relação de causalidade entre as mudanças nas legislações em relação aos homossexuais, e a opinião pública. 
+
+## <font size = 5> Questão de pesquisa: 
+<font size = 4.5>  
+
+  * A regulamentação de direitos civis aos homossexuais tem gerado contraofensiva religiosa por meio do acirramento de atitudes de intolerância política em relação a essa minoria na América Latina?  
+
+\vspace{5truemm} 
+
+# Hipótese {.tabset .tabset-fade}
+
+<font size = 4.5> **H1:** mudanças conjunturais, como o aumento de direitos aos homossexuais, têm gerado uma contraofensiva por parte dos grupos religiosos na forma de atitudes mais intolerantes a essa minoria sexual; 
+
+<font size = 4.5> **H2:** tanto mudanças legais quanto a atenuação do efeito da religião são resultados de um longo e consistente processo de alteração dos valores, principalmente no que diz respeito às liberdades individuais;
+
+<font size = 4.5> 
+
+* Metodologia: Quantitativa  
+* Método: Regressão multinível
+
+
+
+# Material empírico {.tabset .tabset-fade}
+
+<font size = 4.5> 
+
+* Nível individual (1): LAPOP (2019);  
+* Nível contextual (2) advém da composição de variáveis (extraídas de bases como World Atlas, ILGA World).
+
+**UNIVERSO**
+<font size = 4.5>
+
+- 18 países da América Latina e suas populações respectivamente;
+
+**AMOSTRA:**
+<font size = 4.5>
+
+- 28.645 (composto pelo nível 1: indivíduos e nível 2: 18 países) 
+
+
+# Variáveis {.tabset .tabset-fade}
+
+<font size = 4.5>
+
+* VD: Tolerância aos homossexuais
+
+<font size = 4.5>
+
+* VI:  
+   
+    * Religiosidade (denominação, intensidade e ativismo);
+    * Legislação dos países (TNaH); desemprego; uma medida de tolerância por país (2008/2009) e o Índice de Valores Emancipatórios (IVE);   
+    * Variáveis de controle;
+
+
+```{r, echo=FALSE}
+#Naiara lembrar que não é possível inserir imagens de determinados sites, as imagens devem estar baixadas no computador ou então o r tem q ser capaz de puxar essas imagens
+```
+
+
+## LAPOP: 
+
+<center>Tabela 1- Tamanho da amostra do LAPOP por país - 2018/2019
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+library(readxl)
+
+zPais <- read_excel("zPais.xlsx")
+
+
+kable(head(zPais,19), booktabs = TRUE) %>% 
+ kable_styling(latex_options = c("striped", "hold_position"), font_size = 17, position = "left") %>%
+  kable_classic(full_width = F, html_font = "Cambria")%>%
+  scroll_box(height = "400px")
+  
+```
+<sub>Fonte: Autora, 2022</sub>
+
+## TNAH e Desemprego: 
+
+
+<center>Tabela 2- Medidas de Análise do desemprego e da TNaH por país
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+library(readxl)
+
+zdesempregoTNaH <- read_excel("zdesempregoTNaH.xlsx")
+
+
+kable(head(zdesempregoTNaH,18), booktabs = TRUE) %>% 
+ kable_styling(latex_options = c("striped", "hold_position"), font_size = 17, position = "left") %>%
+  kable_classic(full_width = F, html_font = "Cambria")%>%
+  scroll_box(height = "400px")
+  
+```
+<sub>Fonte: Autora, 2022</sub>
+
+
+<font size="2">Tentantiva de aumentar a escala TNaH</font> [Clique aqui](https://github.com/NaiaraSandi1995/Tese/blob/main/TentativadeaumentodaescalaTNaH.xlsx)
+
+<font size="2">Modelos com PIBperCapita</font> [Clique aqui](https://github.com/NaiaraSandi1995/Tese/blob/main/ModelosComPIBpercapita.xlsx)
+
+## Med. de Tolerância: 
+
+<center>Tabela 3- Média geral da variável dependente Tolerância política por país (TolerHomo), renomeada como MedToler, nos 18 países da América Latina entre 2008 e 2009
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+library(readxl)
+
+tab34 <- read_excel("tab34.xlsx", col_types = c("text", 
+    "numeric"))
+
+kable(head(tab34,18), booktabs = TRUE) %>% 
+ kable_styling(latex_options = c("striped", "hold_position"), font_size = 17, position = "left") %>%
+  kable_classic(full_width = F, html_font = "Cambria")%>%
+  scroll_box(height = "400px")
+  
+```
+<sub>Fonte: Autora, 2022</sub>
+
+## IVE: 
+
+<center>Tabela 4- Índice de Valores Emancipatórios de 2012
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+library(readxl)
+
+tab34 <- read_excel("tab34.xlsx", sheet = "2")
+
+
+kable(head(tab34,18), booktabs = TRUE) %>% 
+ kable_styling(latex_options = c("striped", "hold_position"), font_size = 17, position = "left") %>%
+  kable_classic(full_width = F, html_font = "Cambria")%>%
+  scroll_box(height = "400px")
+  
+```
+<sub>Fonte: Autora, 2022</sub>
+
+
+<font size="2">Para acessar o script de criação do IVE:</font> [Clique aqui](https://github.com/NaiaraSandi1995/Tese/blob/main/SCRIPTS/CriacaoIVE2012.R)
+
+# Fluxograma das variáveis {.tabset .tabset-fade}
+
+>Fluxograma 1 - Organização de todas as variáveis utilizadas de acordo importância conferido a cada grupo[1]
+
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
+knitr::include_graphics("info.png")
+```
+<sub>
+Fonte: Autora, a partir dos dados do LAPOP (2004-2019)
+</sub>
+
+<sub> Justificativa para utilização das variáveis de controle: Democracia (Dem) vide capítulo 2 – Tolerância Política e Democracia.  Confiança Interpessoal (Confint) vide cap. 2, subseção 2.2- Tolerância Política nas jovens democracias, conforme Csapo (2017). Sexo vide seção 2.2 - Tolerância Política nas jovens democracias, conforme Ribeiro e Borba (2020).</sub>
+
+
+
+\vspace{5truemm} 
+
+
+
+\vspace{5truemm} 
+
+# Resultados 
+
+
+## Análise Descritiva -Tolerância política:{.tabset .tabset-fade}
+
+
+Nas projeções gráficas é possível verificar os países subdivididos, a partir de suas médias de tolerância, sendo que a variável está organizada em uma escala de 10 pontos. 
+
+Gráfico  – Projeção gráfica da média simples de tolerância nos 18 países, entre 2004 e 2019
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+
+Obj1 <- data.frame(Anos = c(2004, 2006, 2008,	2010,	2012, 2014,
+                            2016,	2018, "Médiaf."), 
+                   Haiti = c(NA,	1.85,	2.27,	1.66,	1.76, 1.94,	1.88,	1.88, 1.92), 
+                   El_Salvador =	c(2.86,	2.99,	3.51,	3.28,	3.38,	3.85,	4.08,	4.4, 3.12),
+                   Guatemala =	c(3.07,	4.08,	3.53,	3.79,	3.7,	2.65,	3.88,	4.07, 3.59),
+                   Honduras = c(3.18,	2.68,	4.15,	4.07,	3.19,	4.64,	4.41,	4.21, 3.82)) 
+
+
+Obj1.1 <- data.frame(Anos = time(EuStockMarkets),
+                     Haiti = EuStockMarkets[, 1],
+                     El_Salvador = EuStockMarkets[, 2],
+                     Guatemala = EuStockMarkets[, 3],
+                     Honduras = EuStockMarkets[, 4])
+
+Obj1.2 <- Obj1 %>% gather(Países, Médias_tolerância, -Anos)
+
+Gra <- ggplot(data = Obj1.2, aes(x= Anos, y= Médias_tolerância, 
+                          group = Países))+
+  geom_line(aes(colour = Países), size = 2) + 
+  geom_point(aes(shape = Países)) 
+
+ 
+uniao1 <- Gra + theme_classic() + theme(legend.position = "bottom")
+  
+
+Objb.1 <- data.frame(Anos = c(2004, 2006, 2008,	2010,	2012, 2014,
+                            2016,	2018, "Médiaf."), 
+                   República_Dominicana= c(4.15,	3.37,	3.27,	3.38,	3.79,	4.1, 4.4, 4.13,	3.83),
+                   Paraguai=	c( NA, 3.57,	3.57,	3.44,	4.01,	4.09,	4.17,	3.93,	3.83),
+                   Panamá=	c(3.9,	4.53,	4.74,	4.1,	3.48,	3.8,	4.39,	3.85,	4.1),
+                   Nicarágua=	c(3.5,	3.92,	4.45,	4.53,	4.53,	4.13,	4.74,	4.67,	4.31)) 
+
+
+Objb.2 <- Objb.1 %>% gather(Países, Médias_tolerância, -Anos)
+
+Gra2 <- ggplot(data = Objb.2, aes(x= Anos, y= Médias_tolerância, 
+                                 group = Países))+
+  geom_line(aes(colour = Países), size = 2) + geom_point(aes(shape = Países))
+
+
+
+uniao2 <- Gra2 + theme_classic() + theme(legend.position = "bottom")
+
+
+## 3ºCorreto ####
+
+
+Objc <- data.frame (Anos = c(2004, 2006, 2008,	2010,	2012, 2014,
+                             2016,	2018, "Médiaf."), 
+Peru =	c(NA, 4.15,	4.25,	4.5,	4.22,	4.23,	4.37,	4.84,	4.36),
+Bolívia	= c(3.7,	3.99,	4.25,	4.19,	4.49,	4.17,	4.91,	4.75,	4.47),
+Equador	= c(1.54,	3.84,	4.32,	4.51,	4.46,	4.33,	4.71,	5.07,	4.68),
+Venezuela	=	c(NA, 5.1,	4.4,	4.78,	4.43,	5.14,	5.42,	5.42,	4.88),
+Costa_Rica =	c(NA, 4.73,	5.09,	5.72,	5.22,	5.52,	6.08,	6,	5.48)) 
+
+Objc.1 <- Objc %>% gather(Países, Médias_tolerância, -Anos)
+
+Gra3 <- ggplot(data = Objc.1, aes(x= Anos, y= Médias_tolerância, 
+                                  group = Países))+
+  geom_line(aes(colour = Países), size = 2) + geom_point(aes(shape = Países))
+
+uniao3 <- Gra3 + theme_classic() + 
+  theme(legend.position = "bottom")
+
+## 4º ####
+Objd <- data.frame (Anos = c(2004, 2006, 2008,	2010,	2012, 2014,
+                             2016,	2018, "Médiaf."), 
+Costa_Rica = c(NA,4.73,	5.09,	5.72,	5.22,	5.52,	6.08,	6,	5.48),
+México = c(5.24,	5.54, 5.17,	5.13,	5.3,	5.43,	5.96,	6.34,	5.51),
+Chile	=	c(NA,5.39,	5.49,	5.87,	6.55,	6.83,	6.98,	6.99,	6.3),
+Brasil=	c(NA,5.87,	5.77,	6.55,	6.55,	6.37,	6.67,	6.89,	6.39),
+Argentina	= c(NA,NA, 7.29, 6.9,	6.41,	6.47,	6.73,	7.05,	6.81),
+Uruguai	=	c(NA, 6.98,6.94,6.94,7.98,8.03,8.1,7.65,7.52)) 
+
+Objd.1 <- Objd %>% gather(Países, Médias_tolerância, -Anos)
+
+Gra4 <- ggplot(data = Objd.1, aes(x= Anos, y= Médias_tolerância, 
+                                  group = Países))+
+  geom_line(aes(colour = Países), size = 2) + geom_point(aes(shape = Países))
+
+
+uniao4 <- Gra4 + theme_classic() + 
+  theme(legend.position = "bottom")
+
+
+## 5º ####
+Obje <- data.frame (Anos = c(2004, 2006, 2008,	2010,	2012, 2014,
+                             2016,	2018, "Médiaf."),
+                    Total_América_Latina = c(3.755,4.289,4.45,4.65,4.75,4.78,
+                                             5.11,5.3,4.75)) 
+
+Obje.1 <- Obje %>% gather(Países, Médias_tolerância, -Anos)
+
+Gra5 <- ggplot(data = Obje.1, aes(x= Anos, y= Médias_tolerância, 
+                                  group = Países))+
+  geom_line(aes(colour = Países), size = 2) + 
+  geom_point(aes(shape = Países))
+
+
+uniao5 <- Gra5 + theme_classic() + 
+  theme(legend.position = "bottom")
+
+```
+
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+###Gráficos do desenvolvimento da intolerância####
+## 1º ####
+
+
+Obj1 <- data.frame(Anos = c(2004, 2006, 2008,	2010,	2012, 2014,
+                            2016,	2018, "Médiaf."), 
+                   Haiti = c(NA,	1.85,	2.27,	1.66,	1.76, 1.94,	1.88,	1.88, 1.92), 
+                   El_Salvador =	c(2.86,	2.99,	3.51,	3.28,	3.38,	3.85,	4.08,	4.4, 3.12),
+                   Guatemala =	c(3.07,	4.08,	3.53,	3.79,	3.7,	2.65,	3.88,	4.07, 3.59),
+                   Honduras = c(3.18,	2.68,	4.15,	4.07,	3.19,	4.64,	4.41,	4.21, 3.82),
+                   República_Dominicana= c(4.15,	3.37,	3.27,	3.38,	3.79,	4.1, 4.4, 4.13,	3.83),
+                   Paraguai=	c( NA, 3.57,	3.57,	3.44,	4.01,	4.09,	4.17,	3.93,	3.83),
+                   Panamá=	c(3.9,	4.53,	4.74,	4.1,	3.48,	3.8,	4.39,	3.85,	4.1),
+                   Nicarágua=	c(3.5,	3.92,	4.45,	4.53,	4.53,	4.13,	4.74,	4.67,	4.31),
+                   Peru =	c(NA, 4.15,	4.25,	4.5,	4.22,	4.23,	4.37,	4.84,	4.36),
+                   Bolívia	= c(3.7,	3.99,	4.25,	4.19,	4.49,	4.17,	4.91,	4.75,	4.47),
+                   Equador	= c(1.54,	3.84,	4.32,	4.51,	4.46,	4.33,	4.71,	5.07,	4.68),
+                   Venezuela	=	c(NA, 5.1,	4.4,	4.78,	4.43,	5.14,	5.42,	5.42,	4.88),
+                   Costa_Rica =	c(NA, 4.73,	5.09,	5.72,	5.22,	5.52,	6.08,	6,	5.48),
+                   México = c(5.24,	5.54, 5.17,	5.13,	5.3,	5.43,	5.96,	6.34,	5.51),
+                   Chile	=	c(NA,5.39,	5.49,	5.87,	6.55,	6.83,	6.98,	6.99,	6.3),
+                   Brasil=	c(NA,5.87,	5.77,	6.55,	6.55,	6.37,	6.67,	6.89,	6.39),
+                   Argentina	= c(NA,NA, 7.29, 6.9,	6.41,	6.47,	6.73,	7.05,	6.81),
+                   Uruguai	=	c(NA, 6.98,6.94,6.94,7.98,8.03,8.1,7.65,7.52),
+                   Total_América_Latina = c(3.755,4.289,4.45,4.65,4.75,4.78,
+                                            5.11,5.3,4.75)) 
+
+
+###Exemplo
+
+####
+Obj1.2 <- Obj1 %>% gather(Países, Médias_tolerância, -Anos)
+
+Gra <- ggplot(data = Obj1.2, aes(x= Anos, y= Médias_tolerância, 
+                                 group = Países))+
+  geom_line(size = 1) 
+
+
+#Para colocar cor
+library(RColorBrewer) # Tem um site 
+#scale_fill_brewer(palette = 2, type = "seq")
+
+#Dividindo em vários gráficos pequenos
+
+#Escolhi esse tema :) 
+GraFinal <- Gra + facet_wrap( ~ Países, nrow = 3) +
+  scale_fill_brewer(palette = 2, type = "seq")
+
+
+
+
+
+```
+
+### Todos os países:
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+GraFinal+ theme_bw() + theme(legend.position = "bottom")+
+  theme(axis.text.x =  element_text(angle = 90, 
+                       vjust = 0, size= 8,  hjust = 1, 
+                       color = "#616161", family = "Times New 
+             Roman"))
+
+```
+
+### América Latina:
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+uniao5
+
+```
+
+<sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub>
+
+### Primeiro grupo:
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+uniao1
+
+```
+
+<sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub>
+
+### Segundo Grupo:
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+uniao2
+
+```
+
+<sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub>
+
+### Terceiro Grupo:
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+uniao3
+
+```
+
+<sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub>
+
+### Quarto Grupo:
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+uniao4
+
+```
+
+<sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub>
+
+## Análise descritivas - Denominações religiosas: 
+
+
+Gráfico 4 - Distribuição das denominações religiosas nos países da América Latina, a partir do valor absoluto das filiações, 2018/2019 
+
+```{r, echo=FALSE, message=FALSE, warning = FALSE}
+load("C:/Users/Naiara/OneDrive/Tolerancia Homossexuais/1- TESE/BancoFinal.RData")
+
+Gráfico <-  ggplot(BancoFinal, aes(x = TolerHomoP, 
+                                   fill = Denom1)) +
+  geom_bar(width = .75) + 
+  labs(x ="Tolerância Homossexuais")
+
+
+Gra2 <- Gráfico  +
+  theme_grey() + facet_wrap( ~ PaisD, nrow = 3) +
+  theme(axis.text.x = 
+          element_text(angle = 90, 
+             vjust = 0, size= 10,  hjust = 1, 
+             color = "black", family = "Times New 
+             Roman")) +
+  scale_fill_brewer(palette ="BrBG", name= "Denominações")
+
+
+
+
+Gra2 + 
+  theme(text = element_text(
+    family = "Times New Roman", size = 13)) + theme_bw () +
+  theme(axis.text.x = element_text(angle = 90, 
+  vjust = 0, size= 7,  hjust = 1)) #Colocar o tema, 
+
+
+```
+
+<sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub>
+
+Com exceção de alguns países, os católicos ainda são maioria, mesmo entre o grupo mais tolerante. Todavia, em países como Uruguai, Brasil, Argentina e Chile, percebe-se um crescimento significativo de ateus no grupo tolerante. Em países como Guatemala, Honduras, El Salvador, Nicarágua e Haiti, existe grande quantidade de filiados a outras denominações no grupo de intolerantes. São poucos os países que possuem quantidades semelhantes ou maiores de tolerantes do que intolerantes, conforme já havíamos verificado no gráfico 1, os países com os maiores índices de tolerância, de acordo com a opinião pública, são: Uruguai, Argentina, Brasil, Costa Rica, Chile e México.
+
+
+---
+
+# Análises inferenciais - 1ª Parte {.tabset .tabset-fade}
+
+## Anova: 
+
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+knitr::include_graphics("tabela5.png")
+```
+
+
+## Modelo 1: 
+Tabela 6, p.81
+```{r, echo=FALSE, out.width="45%", fig.align='center'}
+
+knitr::include_graphics("tabela6.png")
+
+```
+
+## Modelo 2: 
+Tabela 7, p.85
+```{r, echo=FALSE, out.width="55%", fig.align='center'}
+
+knitr::include_graphics("tabela7.png")
+
+```
+
+## Modelo 3: 
+Tabela 9, p.87
+```{r, echo=FALSE, out.width="55%", fig.align='center'}
+
+knitr::include_graphics("tabela9.png")
+
+```
+
+## Modelo 4: 
+Tabela 10, p.88
+```{r, echo=FALSE, out.width="55%", fig.align='center'}
+
+knitr::include_graphics("tabela10.png")
+
+```
+
+
+## valores preditos: 
+Quadro 2, p.89
+
+<center> <font size="3">Valores preditos um indivíduo do sexo masculino, em diferentes contextos políticos e sociais em relação a homossexualidade
+
+```{r}
+text_tbl <- data.frame(
+  VP = c("4,3", "6,5", "3,6", "5,7", "2,5", "4,6","2,9", "5,0"),
+  Descrição = c(
+    "Homem de 40 anos, ateu, que confia na democracia e nos outros cidadãos e que está em um contexto em que os homossexuais não possuem direito a união e adoção.   ",
+    "Esse mesmo homem, de 40 anos, ateu, que confia na democracia e nos outros cidadãos, mas está inserido em um contexto em que os homossexuais têm direitos. ", 
+    "Homem de 40 anos, católico, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos, mas está em um país que não possui nenhum direito para os homossexuais. ",
+    "Esse mesmo homem de 40 anos, católico, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos e está em um país que permite que homossexuais se relacionem, se casem e adotem crianças.",
+    "Homem de 40 anos, evangélico, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos, mas está em um país que não possui nenhum direito para os homossexuais. ",
+    "Esse mesmo homem de 40 anos, evangélico, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos, mas está em um país que permite que homossexuais se relacionem, se casem e adotem crianças. ",
+    "Homem de outra religião, também com 40 anos, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos, mas está em um país que não possui nenhum direito para os homossexuais. ",
+    "Esse mesmo homem de outra religião, também com 40 anos, ativo religiosamente, que considera a religião importante, confia na democracia e nos outros cidadãos, mas está em um país que permite que homossexuais se relacionem, se casem e adotem crianças."
+  )
+)
+
+kbl(text_tbl,  booktabs=T, col.names = c(" ", " "), size=10) %>%
+  kable_paper(full_width = F) %>%
+  kable_styling(font_size = 17) %>%
+  add_header_above(c(" Valores Preditos", "Perfis" ))%>%
+  column_spec(1, bold = T, border_right = T) %>%
+  column_spec(2, width = "40em", background = "#CADEFD")%>%
+  scroll_box(height = "400px")
+```
+<sub>Fonte: Autora, a partir dos dados do LAPOP (2004-2019)</sub>
+
+
+---
+
+# Análises inferenciais - 2ª Parte {.tabset .tabset-fade}
+
+
+## Modelo 5:
+Tabela 11, p.94
+```{r, echo=FALSE, out.width="75%", fig.align='center'}
+
+knitr::include_graphics("tabela11.png")
+
+```
+
+## Descritivas:
+Modelo 6 (tabela 12) e tabela descritiva 13, p.96
+```{r, echo=FALSE, out.width="98%", fig.align='center'}
+
+knitr::include_graphics("tabela12.png")
+
+```
+
+
+## modelo 7:
+Tabela 14, p.97
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
+
+knitr::include_graphics("tabela14.png")
+
+```
+
+## modelo 8:
+Tabela 14, p.97
+```{r, echo=FALSE, out.width="75%", fig.align='center'}
+
+knitr::include_graphics("tabela15.png")
+
+```
+
+\vspace{5truemm} 
+
+# Considerações finais
+
+<font size = 4.5>
+
+* Hipótese 1 foi refutada
+* Hipótese 2 foi confirmada
+
+<center> <kbd> <font size="4.5"> A cultura política se altera e na sequência tem-se a mudança na legislação e, não o contrário. </kbd>
+
+---
+
+<font size="4">Para acessar o script e a base de dados da tese:</font> [Clique aqui](https://github.com/NaiaraSandi1995)
+
+
+---
