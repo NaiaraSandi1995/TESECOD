@@ -18,3 +18,4 @@ D)2ª parta das análises empíricas da tese - contendo o merge + a análise mul
 Todos os modelos finais da tese, inclusive aqueles que foram criados, mas não constam na tese.
 
 
+Link da apresentação: https://rpubs.com/nayara_sandy/Ednaldo
